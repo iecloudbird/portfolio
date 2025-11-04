@@ -1,14 +1,16 @@
 ﻿import Section from "../ui/Section";
 
 export default function Hero() {
+  const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+
   return (
-    <Section id="hero" className="min-h-[90vh] flex items-center">
-      <div className="absolute inset-0 z-0">
+    <Section id="hero" className="min-h-[90vh] flex items-center bg-[#cca300]">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <picture>
           <img
-            src="/images/bg.png"
+            src={`${basePath}/images/bg.png`}
             alt="Hero Background"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center animate-fade-up"
           />
         </picture>
       </div>

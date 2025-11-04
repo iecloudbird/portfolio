@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  /* Palette - Black & Gold Theme */
+  --color-primary: #000000;
+  /* Pure Black */
+  --color-secondary: #cca300;
+  /* Gold */
+  --color-gold-light: #ffd700;
+  /* Light Gold */
+  --color-neutral: #ffffff;
+  /* White */
+  --color-dark-gray: #1a1a1a;
+  /* Dark Gray */
+  --color-medium-gray: #333333;
+  /* Medium Gray */
+
+  /* Derived / semantic */
+  --color-background: var(--color-primary);
+  --color-foreground: var(--color-primary);
+  --color-accent: var(--color-secondary);
+  --color-muted: var(--color-medium-gray);
+  --color-emphasis: var(--color-gold-light);
+}
+
+/* theme inline removed (not required) */
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "SF UI Text", "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-gold-light));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-light);
+}
+
+/* Smooth animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

@@ -1,0 +1,6 @@
+
+
+On skills section:
+- Listing all technologies I have worked with
+    -
+-Display its icon and name, grayscale initially and full tone on hover.

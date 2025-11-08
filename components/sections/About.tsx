@@ -125,7 +125,7 @@ export default function About() {
                     variant="education"
                     image="images/tus.ico"
                     title="BSc Software Design with AI for Cloud Computing"
-                    subtitle="Technological University of the Shannon - 2023 - Present"
+                    subtitle="Technological University of the Shannon:  2022 ~ Present"
                     description="Currently pursuing degree with focus on modern software development, artificial intelligence, and cloud computing technologies."
                     color="#00ff88"
                   />
@@ -133,7 +133,7 @@ export default function About() {
                     variant="education"
                     image="https://upload.wikimedia.org/wikipedia/commons/3/3a/Yahoo%21_%282019%29.svg"
                     title="News Engineering Internship"
-                    subtitle="Yahoo! - 2023"
+                    subtitle="Yahoo! - Jan ~ Aug 2025"
                     description="Gained hands-on experience with React, Next.js, and modern web development practices. Worked on real-world projects and collaborated with development teams."
                     color="#00d4ff"
                   />

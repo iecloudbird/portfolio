@@ -75,7 +75,7 @@ export default function Contact() {
                 Your Message
               </label>
               <textarea
-                placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"
+                placeholder="Hi Shean Hans! I'd love to discuss a project opportunity with you..."
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })

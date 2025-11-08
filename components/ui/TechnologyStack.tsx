@@ -96,10 +96,10 @@ export default function TechnologyStack() {
       {technologies.map((tech) => (
         <div
           key={tech.name}
-          className="flex flex-col items-center gap-2 group hover:scale-110 transition-transform"
+          className="flex flex-col items-center gap-3 group cursor-pointer"
           title={tech.name}
         >
-          <div className="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg p-2 group-hover:bg-[#cca300]/10 transition-colors">
+          <div className="w-14 h-14 flex items-center justify-center bg-white border-2 border-gray-200 rounded-xl p-3 group-hover:border-[#cca300] group-hover:bg-[#cca300]/5 group-hover:scale-110 transition-all duration-300 shadow-sm">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={tech.icon}
@@ -107,7 +107,7 @@ export default function TechnologyStack() {
               className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
             />
           </div>
-          <span className="text-xs text-gray-600 text-center leading-tight">
+          <span className="text-xs font-medium text-gray-600 group-hover:text-[#cca300] text-center leading-tight transition-colors">
             {tech.name}
           </span>
         </div>

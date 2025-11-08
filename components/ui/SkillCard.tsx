@@ -12,16 +12,11 @@ export default function SkillCard({
   title,
   description,
   subtitle,
-  color,
-  variant = "skill",
 }: SkillCardProps) {
   return (
-    <div
-      className="p-6 border-l-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-      style={{ borderLeftColor: color }}
-    >
-      <div className="flex items-start gap-4">
-        <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+    <div className="group relative p-6 bg-white border border-gray-200 rounded-xl hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <div className="flex items-start gap-5 relative z-10">
+        <div className="w-14 h-14 flex items-center justify-center flex-shrink-0 bg-gray-50 rounded-xl p-3 group-hover:bg-[#cca300]/10 transition-colors">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={image}
@@ -29,27 +24,15 @@ export default function SkillCard({
             className="w-full h-full object-contain"
           />
         </div>
-        <div>
-          <h4 className="text-lg font-bold mb-2" style={{ color }}>
+        <div className="flex-1">
+          <h4 className="text-xl font-bold mb-2 text-black group-hover:text-[#cca300] transition-colors">
             {title}
           </h4>
           {subtitle && (
-            <p
-              className={`text-sm mb-1 ${
-                variant === "education" ? "text-gray-700" : "text-gray-600"
-              }`}
-            >
-              {subtitle}
-            </p>
+            <p className="text-sm font-medium text-gray-600 mb-2">{subtitle}</p>
           )}
           {description && (
-            <p
-              className={`text-${
-                variant === "education" ? "xs" : "sm"
-              } text-gray-${
-                variant === "education" ? "500" : "600"
-              } leading-relaxed`}
-            >
+            <p className="text-base text-gray-600 leading-relaxed">
               {description}
             </p>
           )}

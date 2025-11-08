@@ -87,7 +87,7 @@ export default function Contact() {
 
             {/* Submit Button */}
             <div className="pt-8">
-              <HoldButton holdDuration={1000} onHoldComplete={handleSubmit}>
+              <HoldButton holdDuration={300} onHoldComplete={handleSubmit}>
                 Send Message
               </HoldButton>
             </div>

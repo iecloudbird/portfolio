@@ -12,50 +12,87 @@ export default function About() {
           <h2 className="text-5xl font-bold mb-16 text-center">ABOUT</h2>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* LEFT COLUMN */}
-            <div className="space-y-12">
-              {/* Introduction */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-x-12 lg:gap-y-12">
+            {/* Introduction - Row 1, Column 1 */}
+            <div className="lg:row-start-1">
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-[#cca300]">
+                <h3 className="text-xl font-bold mb-6 text-[#cca300]">
                   INTRODUCTION
                 </h3>
                 <div className="space-y-4 text-base text-gray-700 leading-relaxed">
                   <p className="text-lg">
                     <span className="text-[#cca300] font-semibold">
-                      👋 Hi, I&apos;m{" "}
+                      🌱 Hi, I&apos;m{" "}
                     </span>
-                    <span className="text-[#00ff88] font-bold">
+                    <span className="text-black font-bold">
                       Shean Hans Teoh
                     </span>
                   </p>
 
                   <p>
-                    My name is Shean Hans. I&apos;m an aspiring software
-                    engineer specializing in AI and Cloud Computing. I like to
-                    build things for the web and create innovative software
-                    solutions that make a difference.
+                    My name is Shean Hans. I&apos;m an{" "}
+                    <strong className="text-[#cca300]">
+                      aspiring software engineer
+                    </strong>{" "}
+                    specializing in AI and Cloud Computing. I like to build
+                    things for the web and create innovative software solutions
+                    that make a difference.
                   </p>
+
                   <p>
-                    I&apos;m passionate about exploring new technologies and
-                    continuously honing my skills to fulfill my goal of becoming
-                    a proficient software developer.
+                    I bring a comprehensive skill set spanning full-stack
+                    development with expertise in Python, Java, JavaScript, and
+                    TypeScript. My frontend capabilities include building
+                    responsive, user-centric applications with React, Next.js,
+                    and Flutter, while my backend experience covers Supabase,
+                    Firebase, Node.js, and MySQL. I&apos;ve optimized production
+                    React code for high-traffic platforms, implemented cloud
+                    monitoring with Datadog, and led a team in developing
+                    full-stack solutions that combine web and mobile
+                    technologies.
+                  </p>
+
+                  <p>
+                    Beyond coding, I find balance through gardening and
+                    calisthenics training—activities that reinforce the
+                    patience, discipline, and focus . I&apos;m passionate about
+                    exploring emerging technologies and continuously expanding
+                    my expertise to create meaningful impact.
                   </p>
 
                   {/* Personal Motto */}
-                  <div className="mt-6 pt-6 border-t border-gray-200">
-                    <p className="text-lg italic text-gray-700 leading-relaxed">
-                      &ldquo;Pray as though everything depended on God. Work as
-                      though everything depended on you.&rdquo;
+                  <div className="mt-8 relative py-4 px-6 border border-[#cca300]/40 shadow-md">
+                    {/* Top-left corner */}
+                    <div className="absolute top-0 left-0 w-8 h-8 border-t-3 border-l-3 border-[#cca300]"></div>
+
+                    <p className="text-lg italic text-black leading-relaxed font-medium">
+                      Pray as though everything depended on God. Work as though
+                      everything depended on you.
                     </p>
-                    <p className="text-sm text-gray-500 mt-2">
+
+                    {/* Bottom-right corner */}
+                    <div className="absolute bottom-0 right-0 w-8 h-8 border-b-3 border-r-3 border-[#cca300]"></div>
+
+                    <p className="text-sm text-gray-500 mt-2 text-right font-normal">
                       — Saint Augustine of Hippo
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Main Skills */}
+            {/* Technologies - Row 1, Column 2 */}
+            <div className="lg:row-start-1">
+              <div>
+                <h3 className="text-xl font-bold mb-6 text-[#cca300]">
+                  TECHNOLOGIES
+                </h3>
+                <TechnologyStack />
+              </div>
+            </div>
+
+            {/* Main Skills - Row 2, Column 1 */}
+            <div className="lg:row-start-2">
               <div>
                 <h3 className="text-xl font-bold mb-6 text-[#cca300]">
                   MAIN SKILLS
@@ -68,15 +105,17 @@ export default function About() {
                     color="#00ff88"
                   />
                   <SkillCard
-                    image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                    title="UI/UX & Design Systems"
-                    description="Crafting intuitive, visually polished interfaces with a strong focus on UX"
+                    image="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                    title="Machine Learning & AI"
+                    description="Applying data mining, ML algorithms, and advanced techniques to solve complex problems and build intelligent solutions"
                     color="#00d4ff"
                   />
                 </div>
               </div>
+            </div>
 
-              {/* Education & Certifications */}
+            {/* Education & Experience - Row 2, Column 2 */}
+            <div className="lg:row-start-2">
               <div>
                 <h3 className="text-xl font-bold mb-6 text-[#cca300]">
                   EDUCATION & EXPERIENCE
@@ -102,17 +141,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN */}
-            <div className="space-y-12">
-              {/* Technologies */}
-              <div>
-                <h3 className="text-xl font-bold mb-6 text-[#cca300]">
-                  TECHNOLOGIES
-                </h3>
-                <TechnologyStack />
-              </div>
-
-              {/* Work Timeline */}
+            {/* Work Timeline - Row 3, Full Width */}
+            <div className="lg:row-start-3 lg:col-span-2">
               <div>
                 <h3 className="text-xl font-bold mb-6 text-[#cca300]">
                   WORK TIMELINE

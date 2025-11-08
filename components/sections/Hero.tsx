@@ -4,15 +4,16 @@ export default function Hero() {
   const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
   return (
-    <Section id="hero" className="min-h-[90vh] flex items-center bg-[#cca300]">
+    <Section
+      id="hero"
+      className="min-h-[90vh] flex items-center bg-[#cca300] pt-20"
+    >
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <picture>
-          <img
-            src={`${basePath}/images/bg.png`}
-            alt="Hero Background"
-            className="w-full h-full object-cover object-center animate-fade-up"
-          />
-        </picture>
+        <img
+          src={`${basePath}/images/bg.png`}
+          alt="Hero Background"
+          className="w-full h-full object-cover object-center animate-fade-up"
+        />
       </div>
 
       <div className="relative z-10 flex-1 max-w-5xl text-black">

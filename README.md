@@ -118,4 +118,55 @@ uColor3: { value: new THREE.Color('#00d4ff') }, // Highlight
 
 ---
 
-_"May this portfolio be like a drop of water that creates ripples of positive impact."_ 💧
+# Shean Hans Teoh - Portfolio
+
+> _"Pray as though everything depended on God. Work as though everything depended on you."_  
+> — Saint Augustine of Hippo
+
+## 👋 About
+
+I'm Shean Hans Teoh, an aspiring software engineer specializing in AI and Cloud Computing. Currently pursuing a BSc in Software Design with AI for Cloud Computing at Technological University of the Shannon (TUS).
+
+I'm passionate about building innovative web applications and creating software solutions that make a meaningful impact. This portfolio showcases my projects, skills, and professional journey.
+
+## 🛠️ Tech Stack
+
+Built with modern web technologies:
+
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animation:** Framer Motion
+- **Deployment:** GitHub Pages
+
+## ✨ Features
+
+- 🎨 Clean black & gold design aesthetic
+- 📱 Fully responsive across all devices
+- ✨ Smooth animations and transitions
+- 🎯 Interactive project cards with 3D flip effects
+- 📧 Contact form with engaging hover-fill button
+- 🚀 Optimized for performance and accessibility
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Visit [https://iecloudbird.github.io/portfolio](https://iecloudbird.github.io/portfolio) to view the live site.
+
+## 📬 Contact
+
+Feel free to reach out for collaboration opportunities or just to say hello!
+
+---
+
+© 2025 Shean Hans Teoh. All rights reserved.

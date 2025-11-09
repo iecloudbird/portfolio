@@ -13,6 +13,8 @@ import {
 import { ShootingStars } from "../ui/shooting-stars";
 import { StarsBackground } from "../ui/stars-background";
 
+const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+
 interface Project {
   title: string;
   subtitle: string;
@@ -79,7 +81,7 @@ function ProjectThumbnail({
             {project.imageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={`/images/projects/${project.imageUrl}`}
+                src={`${basePath}/images/projects/${project.imageUrl}`}
                 alt={project.title}
                 className={`w-full h-full ${
                   index === 2 ? "object-contain" : "object-cover"
@@ -310,7 +312,7 @@ export default function Projects() {
                     <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border-2 border-gray-700">
                       {selectedProject.videoUrl ? (
                         <video
-                          src={`/${selectedProject.videoUrl}`}
+                          src={`${basePath}/${selectedProject.videoUrl}`}
                           autoPlay
                           loop
                           muted
@@ -319,7 +321,7 @@ export default function Projects() {
                       ) : selectedProject.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
-                          src={`/images/projects/${selectedProject.imageUrl}`}
+                          src={`${basePath}/images/projects/${selectedProject.imageUrl}`}
                           alt={selectedProject.title}
                           className="w-full h-full object-cover"
                         />

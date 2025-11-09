@@ -34,6 +34,7 @@ export default function HoldButton({
         "bg-white hover:text-[#cca300]",
         "font-semibold transition-colors duration-300",
         "min-w-[200px]",
+        "cursor-pointer",
         className
       )}
       onMouseEnter={() => setIsHovering(true)}

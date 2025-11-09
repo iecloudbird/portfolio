@@ -143,8 +143,8 @@ export default function About() {
 
             {/* Work Timeline - Row 3, Full Width */}
             <div className="lg:row-start-3 lg:col-span-2">
-              <div>
-                <h3 className="text-xl font-bold mb-6 text-[#cca300]">
+              <div className="bg-[#cca300] -mx-6 px-6 py-12 rounded-xl">
+                <h3 className="text-xl font-bold mb-12 text-black text-center">
                   WORK TIMELINE
                 </h3>
                 <Timeline />

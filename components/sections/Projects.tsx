@@ -79,7 +79,7 @@ function ProjectThumbnail({
             {project.imageUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src={project.imageUrl}
+                src={`/images/projects/${project.imageUrl}`}
                 alt={project.title}
                 className={`w-full h-full ${
                   index === 2 ? "object-contain" : "object-cover"
@@ -176,7 +176,7 @@ export default function Projects() {
       status: "completed",
       icon: "📱",
       thumbnailBg: "from-blue-50 to-blue-100",
-      imageUrl: "/images/projects/hackathlonew_25.png",
+      imageUrl: "hackathlonew_25.png",
       videoUrl: "feature_stacked.mp4",
     },
     {
@@ -198,7 +198,7 @@ export default function Projects() {
       status: "completed",
       icon: "🌐",
       thumbnailBg: "from-purple-50 to-purple-100",
-      imageUrl: "/images/projects/hackathlone_25.png",
+      imageUrl: "hackathlone_25.png",
       videoUrl: "hackathlone_24.mp4",
     },
     {
@@ -214,7 +214,7 @@ export default function Projects() {
       status: "completed",
       icon: "✈️",
       thumbnailBg: "from-orange-50 to-orange-100",
-      imageUrl: "/images/projects/wti.png",
+      imageUrl: "wti.png",
       videoUrl: "wti.mp4",
     },
     {
@@ -235,7 +235,7 @@ export default function Projects() {
       status: "in-progress",
       icon: "📊",
       thumbnailBg: "from-blue-50 to-blue-100",
-      imageUrl: "/images/projects/emetix.jpg",
+      imageUrl: "emetix.jpg",
     },
   ];
 
@@ -310,7 +310,7 @@ export default function Projects() {
                     <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border-2 border-gray-700">
                       {selectedProject.videoUrl ? (
                         <video
-                          src={selectedProject.videoUrl}
+                          src={`/${selectedProject.videoUrl}`}
                           autoPlay
                           loop
                           muted
@@ -319,7 +319,7 @@ export default function Projects() {
                       ) : selectedProject.imageUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
-                          src={selectedProject.imageUrl}
+                          src={`/images/projects/${selectedProject.imageUrl}`}
                           alt={selectedProject.title}
                           className="w-full h-full object-cover"
                         />

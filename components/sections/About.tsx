@@ -9,10 +9,12 @@ export default function About() {
       <Section id="about" className="py-20 bg-white rounded-t-[3rem]">
         <div className="w-full">
           {/* Section Title */}
-          <h2 className="text-5xl font-bold mb-16 text-center">ABOUT</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-12 sm:mb-16 text-center">
+            ABOUT
+          </h2>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-x-12 lg:gap-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-x-12 lg:gap-y-12">
             {/* Introduction - Row 1, Column 1 */}
             <div className="lg:row-start-1">
               <div>
@@ -143,8 +145,8 @@ export default function About() {
 
             {/* Work Timeline - Row 3, Full Width */}
             <div className="lg:row-start-3 lg:col-span-2">
-              <div className="bg-[#cca300] -mx-6 px-6 py-12 rounded-xl">
-                <h3 className="text-xl font-bold mb-12 text-black text-center">
+              <div className="bg-[#cca300] -mx-4 sm:-mx-6 px-4 sm:px-6 py-8 sm:py-12 rounded-xl">
+                <h3 className="text-lg sm:text-xl font-bold mb-8 sm:mb-12 text-black text-center">
                   WORK TIMELINE
                 </h3>
                 <Timeline />

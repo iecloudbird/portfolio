@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
   useEffect(() => {
@@ -20,6 +21,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMobileMenuClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const navItems = [
     { label: "Home", href: "#hero" },
@@ -47,7 +57,9 @@ export default function Header() {
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 group">
             <img
-              src={`${basePath}/images/logo.png`}
+              src={`${basePath}/images/${
+                isScrolled ? "logow.png" : "logo.png"
+              }`}
               alt="Shean Hans Teoh"
               className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-110"
             />
@@ -73,36 +85,56 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center group"
+            onClick={handleMobileMenuClick}
+            className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center group relative z-30"
             aria-label="Toggle menu"
           >
             <span
-              className={`w-6 h-0.5 transition-all duration-500 group-hover:bg-[#cca300] ${
-                isScrolled ? "bg-white" : "bg-black"
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "rotate-45 translate-y-2 bg-[#cca300]"
+                  : isScrolled
+                  ? "bg-white group-hover:bg-[#cca300]"
+                  : "bg-black group-hover:bg-[#cca300]"
               }`}
             />
             <span
-              className={`w-6 h-0.5 transition-all duration-500 group-hover:bg-[#cca300] ${
-                isScrolled ? "bg-white" : "bg-black"
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "opacity-0"
+                  : isScrolled
+                  ? "bg-white group-hover:bg-[#cca300]"
+                  : "bg-black group-hover:bg-[#cca300]"
               }`}
             />
             <span
-              className={`w-6 h-0.5 transition-all duration-500 group-hover:bg-[#cca300] ${
-                isScrolled ? "bg-white" : "bg-black"
+              className={`w-6 h-0.5 transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "-rotate-45 -translate-y-2 bg-[#cca300]"
+                  : isScrolled
+                  ? "bg-white group-hover:bg-[#cca300]"
+                  : "bg-black group-hover:bg-[#cca300]"
               }`}
             />
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Overlay - Hidden for now, can be enhanced later */}
-      <div className="md:hidden hidden">
-        <nav className="flex flex-col gap-4 p-8 bg-white border-t border-gray-200">
+      {/* Mobile Navigation Overlay */}
+      <div
+        className={`md:hidden fixed inset-0 top-20 bg-black/95 backdrop-blur-sm transition-all duration-300 z-[100] ${
+          isMobileMenuOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
+        }`}
+      >
+        <nav className="flex flex-col gap-6 p-8">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-lg font-medium text-black hover:text-[#cca300] transition-colors"
+              onClick={handleNavClick}
+              className="text-2xl font-semibold text-white hover:text-[#cca300] transition-colors"
             >
               {item.label}
             </a>

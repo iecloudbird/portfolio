@@ -21,21 +21,21 @@ export default function Contact() {
 
   return (
     <div className="bg-white">
-      <Section id="contact" className="py-20">
-        <div className="w-full max-w-4xl mx-auto text-center">
+      <Section id="contact" className="py-12 sm:py-20">
+        <div className="w-full max-w-4xl mx-auto text-center px-4 sm:px-0">
           {/* Heading */}
-          <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 sm:mb-6">
             Send me a message!
           </h2>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto">
             Whether it&apos;s a project idea or just to say hi, I&apos;d love to
             hear from you.
           </p>
 
           {/* Form */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Name and Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Input */}

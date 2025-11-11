@@ -58,14 +58,14 @@ export default function Timeline() {
 
   return (
     <div className="relative max-w-4xl mx-auto">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-6 sm:gap-8">
         {/* Left Side - Timeline Navigation */}
         <div className="md:w-2/5 relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-[#cca300]/20 via-[#cca300]/50 to-[#cca300]/20" />
+          <div className="absolute left-6 sm:left-8 top-6 sm:top-8 bottom-6 sm:bottom-8 w-0.5 bg-gradient-to-b from-[#cca300]/20 via-[#cca300]/50 to-[#cca300]/20" />
 
           {/* Timeline Items */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {timelineData.map((item, index) => {
               const Icon = iconMap[item.icon];
               const isSelected = selectedIndex === index;
@@ -77,7 +77,7 @@ export default function Timeline() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setSelectedIndex(index)}
-                  className={`relative pl-20 cursor-pointer transition-all duration-300 ${
+                  className={`relative pl-14 sm:pl-16 md:pl-20 cursor-pointer transition-all duration-300 ${
                     isSelected ? "opacity-100" : "opacity-50 hover:opacity-75"
                   }`}
                 >
@@ -110,14 +110,14 @@ export default function Timeline() {
                         />
                       )}
                       <div
-                        className={`relative w-16 h-16 rounded-full flex items-center justify-center border-4 transition-all duration-300 ${
+                        className={`relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center border-3 sm:border-4 transition-all duration-300 ${
                           isSelected
                             ? "bg-black border-black shadow-lg shadow-black/30"
                             : "bg-white/80 border-gray-300"
                         }`}
                       >
                         <Icon
-                          className={`w-7 h-7 transition-colors ${
+                          className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 transition-colors ${
                             isSelected ? "text-[#cca300]" : "text-gray-500"
                           }`}
                         />
@@ -126,10 +126,10 @@ export default function Timeline() {
                   </div>
 
                   {/* Compact Info */}
-                  <div className="py-2">
+                  <div className="py-1 sm:py-2">
                     {item.current && (
                       <span
-                        className={`inline-block px-2 py-0.5 text-xs font-bold rounded-full mb-2 transition-colors ${
+                        className={`inline-block px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-bold rounded-full mb-1 sm:mb-2 transition-colors ${
                           isSelected
                             ? "bg-black text-[#cca300]"
                             : "bg-black/50 text-gray-300"
@@ -139,21 +139,21 @@ export default function Timeline() {
                       </span>
                     )}
                     <h4
-                      className={`font-bold text-base mb-1 transition-colors ${
+                      className={`font-bold text-sm sm:text-base mb-0.5 sm:mb-1 transition-colors ${
                         isSelected ? "text-black" : "text-gray-700"
                       }`}
                     >
                       {item.role}
                     </h4>
                     <p
-                      className={`text-sm font-medium transition-colors ${
+                      className={`text-xs sm:text-sm font-medium transition-colors ${
                         isSelected ? "text-black/80" : "text-gray-600"
                       }`}
                     >
                       {item.company}
                     </p>
                     <p
-                      className={`text-xs mt-1 transition-colors ${
+                      className={`text-[10px] sm:text-xs mt-0.5 sm:mt-1 transition-colors ${
                         isSelected ? "text-gray-700" : "text-gray-500"
                       }`}
                     >
@@ -167,7 +167,7 @@ export default function Timeline() {
         </div>
 
         {/* Right Side - Detailed Content */}
-        <div className="md:w-3/5 md:pt-0 pt-8">
+        <div className="md:w-3/5 md:pt-0 pt-2 sm:pt-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedIndex}
@@ -175,27 +175,27 @@ export default function Timeline() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-black/90 backdrop-blur-sm border-2 border-black rounded-xl p-8 transition-all duration-300 shadow-xl h-full"
+              className="bg-black/90 backdrop-blur-sm border-2 border-black rounded-lg sm:rounded-xl p-5 sm:p-6 md:p-8 transition-all duration-300 shadow-xl h-full"
             >
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {timelineData[selectedIndex].current && (
-                  <span className="inline-block px-3 py-1 bg-[#cca300] text-black text-xs font-bold rounded-full">
+                  <span className="inline-block px-2.5 sm:px-3 py-0.5 sm:py-1 bg-[#cca300] text-black text-[10px] sm:text-xs font-bold rounded-full">
                     CURRENT POSITION
                   </span>
                 )}
                 <div>
-                  <h3 className="text-3xl font-bold text-[#cca300] mb-2">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#cca300] mb-1 sm:mb-2">
                     {timelineData[selectedIndex].role}
                   </h3>
-                  <p className="text-white font-semibold text-xl mb-3">
+                  <p className="text-white font-semibold text-base sm:text-lg md:text-xl mb-2 sm:mb-3">
                     {timelineData[selectedIndex].company}
                   </p>
-                  <div className="text-gray-300 text-sm mb-4">
+                  <div className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
                     <p>{timelineData[selectedIndex].period}</p>
                   </div>
                 </div>
                 <div className="h-px bg-gradient-to-r from-[#cca300]/50 to-transparent" />
-                <p className="text-gray-200 leading-relaxed text-base">
+                <p className="text-gray-200 leading-relaxed text-sm sm:text-base">
                   {timelineData[selectedIndex].description}
                 </p>
               </div>

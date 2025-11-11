@@ -55,7 +55,7 @@ function ProjectThumbnail({
 
   return (
     <div
-      className="relative h-48 cursor-pointer perspective-1000"
+      className="relative h-32 sm:h-40 md:h-48 cursor-pointer perspective-1000"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={onClick}
@@ -132,16 +132,17 @@ function ProjectThumbnail({
               />
             )}
 
-            <div className="relative z-10 flex flex-col justify-center items-center text-center h-full space-y-3 px-2">
-              <h4 className="font-bold text-xl leading-tight text-white">
+            <div className="relative z-10 flex flex-col justify-center items-center text-center h-full space-y-2 sm:space-y-3 px-1 sm:px-2">
+              <h4 className="font-bold text-sm sm:text-base md:text-xl leading-tight text-white">
                 {project.title}
               </h4>
-              <p className="text-sm text-[#cca300] font-medium">
+              <p className="text-xs sm:text-sm text-[#cca300] font-medium">
                 {project.subtitle}
               </p>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mt-2">
-                <Eye className="w-4 h-4" />
-                <span>Click to view</span>
+              <div className="flex items-center gap-1 sm:gap-2 text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Click to view</span>
+                <span className="sm:hidden">View</span>
               </div>
             </div>
 
@@ -261,16 +262,16 @@ export default function Projects() {
         maxTwinkleSpeed={1}
       />
 
-      <Section id="projects" className="py-20 relative z-10">
-        <div className="w-full">
-          <h2 className="text-5xl font-bold mb-8 text-center relative">
+      <Section id="projects" className="py-12 sm:py-20 relative z-10">
+        <div className="w-full px-2 sm:px-0">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 sm:mb-8 text-center relative">
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-300 via-white to-white">
               PROJECTS
             </span>
           </h2>
 
           {/* Featured Project Panel */}
-          <div className="relative min-h-[600px] md:min-h-[450px]">
+          <div className="relative min-h-[700px] sm:min-h-[600px] md:min-h-[450px]">
             {/* Previous Button */}
             <button
               onClick={() =>
@@ -278,10 +279,10 @@ export default function Projects() {
                   prev === 0 ? projects.length - 1 : prev - 1
                 )
               }
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-20 w-12 h-12 bg-gray-800 hover:bg-[#cca300] border-2 border-gray-700 hover:border-[#cca300] rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-6 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 hover:bg-[#cca300] border-2 border-gray-700 hover:border-[#cca300] rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group"
               aria-label="Previous project"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-black transition-colors" />
             </button>
 
             {/* Next Button */}
@@ -291,10 +292,10 @@ export default function Projects() {
                   prev === projects.length - 1 ? 0 : prev + 1
                 )
               }
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 z-20 w-12 h-12 bg-gray-800 hover:bg-[#cca300] border-2 border-gray-700 hover:border-[#cca300] rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-6 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-gray-800 hover:bg-[#cca300] border-2 border-gray-700 hover:border-[#cca300] rounded-full flex items-center justify-center transition-all duration-300 shadow-lg group"
               aria-label="Next project"
             >
-              <ChevronRight className="w-6 h-6 text-gray-400 group-hover:text-black transition-colors" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-black transition-colors" />
             </button>
 
             <AnimatePresence mode="wait">
@@ -304,9 +305,9 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-                className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border-2 border-gray-800/50 rounded-2xl p-6 md:p-8 shadow-2xl hover:border-[#cca300]/50 hover:shadow-[#cca300]/20 transition-all duration-300"
+                className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border-2 border-gray-800/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl hover:border-[#cca300]/50 hover:shadow-[#cca300]/20 transition-all duration-300"
               >
-                <div className="grid md:grid-cols-2 gap-6 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
                   {/* Left: Project Preview */}
                   <div className="space-y-4">
                     <div className="relative aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden border-2 border-gray-700">
@@ -358,29 +359,29 @@ export default function Projects() {
                   </div>
 
                   {/* Right: Project Details */}
-                  <div className="space-y-4">
+                  <div className="space-y-3 sm:space-y-4">
                     <div>
-                      <h3 className="text-3xl font-bold mb-1 text-white">
+                      <h3 className="text-2xl sm:text-3xl font-bold mb-1 text-white">
                         {selectedProject.title}
                       </h3>
-                      <p className="text-[#cca300] font-medium text-lg">
+                      <p className="text-[#cca300] font-medium text-base sm:text-lg">
                         {selectedProject.subtitle}
                       </p>
                     </div>
 
-                    <p className="text-gray-300 leading-relaxed text-base">
+                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                       {selectedProject.fullDescription}
                     </p>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4 pt-4">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                       <a
                         href={selectedProject.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 bg-[#cca300] text-black rounded-xl font-medium hover:bg-[#ffd700] transition-colors duration-300 shadow-md"
+                        className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-[#cca300] text-black rounded-xl font-medium hover:bg-[#ffd700] transition-colors duration-300 shadow-md"
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                         View Code
                       </a>
                       {selectedProject.liveUrl && (
@@ -388,9 +389,9 @@ export default function Projects() {
                           href={selectedProject.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-6 py-3 bg-gray-800 text-white border-2 border-gray-700 rounded-xl font-medium hover:border-[#cca300] hover:bg-gray-700 transition-colors duration-300"
+                          className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gray-800 text-white border-2 border-gray-700 rounded-xl font-medium hover:border-[#cca300] hover:bg-gray-700 transition-colors duration-300"
                         >
-                          <ExternalLink className="w-5 h-5" />
+                          <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                           Live Demo
                         </a>
                       )}
@@ -402,7 +403,7 @@ export default function Projects() {
           </div>
 
           {/* Project Thumbnails */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-6 sm:mt-8 mb-12 sm:mb-20">
             {projects.map((project, index) => (
               <ProjectThumbnail
                 key={index}

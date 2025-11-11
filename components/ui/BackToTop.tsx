@@ -30,10 +30,10 @@ export default function BackToTop() {
     <button
       onClick={scrollToTop}
       style={{ zIndex: 9999 }}
-      className="fixed bottom-8 right-8 p-4 bg-[#cca300] text-black rounded-full shadow-lg hover:bg-[#ffd700] hover:shadow-xl transform hover:scale-110 transition-all duration-300 cursor-pointer"
+      className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 p-3 sm:p-4 bg-[#cca300] text-black rounded-full shadow-lg hover:bg-[#ffd700] hover:shadow-xl transform hover:scale-110 transition-all duration-300 cursor-pointer"
       aria-label="Back to top"
     >
-      <ArrowUp className="w-6 h-6" />
+      <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
     </button>
   );
 }
